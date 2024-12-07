@@ -124,5 +124,19 @@ def view_milestones():
         print(milestones)
     return render_template("view_milestones.html", milestones=milestones)
 
+@app.route("/view_events")
+def view_events():
+    conn = sqlite3.connect('alumni.db')
+    cursor = conn.cursor()
+    
+    # Fetch all events
+    cursor.execute("SELECT event_name, event_date FROM events")
+    events = cursor.fetchall()
+    
+    conn.close()
+    
+    return render_template("view_events.html", events=events)
+
+
 if __name__ == '__main__':
     init_db()
