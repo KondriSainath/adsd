@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Career Milestones</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Career Milestones of Alumni</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Alumnus Name</th>
+                <th>Career Milestone</th>
+                <th>Achievement date</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for milestone in milestones %}
+            <tr>
+                <td>{{ milestone[1] }}</td>
+                <td>{{ milestone[2] }}</td>
+                <td>{{ milestone[3] }}</td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Button to go back to the alumni list -->
+    <button onclick="window.location.href='/view_alumni'">Back to Alumni List</button>
+</body>
+</html>

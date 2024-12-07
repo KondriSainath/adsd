@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Alumni</title>
+</head>
+<body>
+    <h1>Alumni List</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Career</th>
+        </tr>
+        {% for alumnus in alumni %}
+        <tr>
+            <td>{{ alumnus[0] }}</td>
+            <td>{{ alumnus[1] }}</td>
+            <td>{{ alumnus[2] }}</td>
+            <td>{{ alumnus[3] }}</td>
+            <td>{{ alumnus[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <button onclick="window.location.href='/'">Back to Main Page</button>
+
+    <br><br>
+    <a href="/view_milestones">View Career Milestones</a>
+    
+</body>
+</html>
