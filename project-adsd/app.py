@@ -24,8 +24,7 @@ def init_db():
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 name text not null,
                 milestone TEXT NOT NULL,
-                date_achieved DATE NOT NULL,
-                FOREIGN KEY (alumnus_id) REFERENCES alumni(id) ON DELETE CASCADE
+                date_achieved DATE NOT NULL
             );
         ''')
         cursor.execute('''
@@ -38,9 +37,7 @@ def init_db():
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS event_participation (
                 alumnus_id INTEGER,
-                event_id INTEGER,
-                FOREIGN KEY (alumnus_id) REFERENCES alumni(id) ON DELETE CASCADE,
-                FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE
+                event_id INTEGER
             );
         ''')
         cursor.execute('''
@@ -48,9 +45,7 @@ def init_db():
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 alumnus_id INTEGER,
                 donation_amount REAL NOT NULL,
-                donation_date DATE NOT NULL,
-                FOREIGN KEY (alumnus_id) REFERENCES alumni(id) ON DELETE CASCADE
-            );
+                donation_date DATE NOT NULL            );
         ''')
         conn.commit()
 
