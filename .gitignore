@@ -2,6 +2,8 @@ gdelozie/
 .DS_Store
 Notes
 
+private.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
